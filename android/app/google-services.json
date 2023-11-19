@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "379629337164",
+    "project_id": "chirkut-6bead",
+    "storage_bucket": "chirkut-6bead.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379629337164:android:1a9b5262be501c82de52e9",
+        "android_client_info": {
+          "package_name": "com.social.chillx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379629337164-opmtu2dpce9a6p2m8rv6ogqpq49u33t3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.social.chillx",
+            "certificate_hash": "93b59dbddc3555dd8c6d5831c5be965753afbec9"
+          }
+        },
+        {
+          "client_id": "379629337164-6esdb4ims5u8cmndlutpege5t1fvm3jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf6eTiM5rYvDkWP0yry_xhUBk30wmGSf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379629337164-6esdb4ims5u8cmndlutpege5t1fvm3jv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
