@@ -34,18 +34,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final user = FirebaseAuth.instance.currentUser!;
+  // final user = FirebaseAuth.instance.currentUser!;
   ScrollController controller = ScrollController();
   final _restaurants = [];
   var _nomore = false;
   var _isFetching = false;
   late DocumentSnapshot _lastDocument;
 
-  @override
-  void initState() {
-    getDoc(context);
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   getDoc(context);
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -70,11 +70,11 @@ class _HomeState extends State<Home> {
             }, icon: const Icon(Icons.notifications)),
 
 
-            IconButton(
-              iconSize: 35 ,
-              onPressed: (){
-              Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, alignment: Alignment.bottomCenter, child: const AccountPage(),));
-            }, icon: Icon(Icons.account_circle_rounded)),
+            // IconButton(
+            //   iconSize: 35 ,
+            //   onPressed: (){
+            //   Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, alignment: Alignment.bottomCenter, child: const AccountPage(),));
+            // }, icon: Icon(Icons.account_circle_rounded)),
         ],
       ),
 
@@ -96,7 +96,7 @@ class _HomeState extends State<Home> {
         SingleChildScrollView(
           child: Column(children: [
             buildPools(),
-            userInterest()
+            // userInterest()
           ],),
         )
         
@@ -107,13 +107,13 @@ class _HomeState extends State<Home> {
 
        
       // add recommendations // post 
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
-        onPressed: () {
-          Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft,child: const Upload()));
-        },
-        child : const Icon(Icons.add, size: 30),
-        ),
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.lightBlueAccent,
+      //   onPressed: () {
+      //     Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft,child: const Upload()));
+      //   },
+      //   child : const Icon(Icons.add, size: 30),
+      //   ),
         ),
     );
   }
