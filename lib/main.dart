@@ -64,14 +64,37 @@ class _MainState extends State<Main> {
         ),
       ),
     ),
+    // initialBinding: RootBinding(),
+      // getPages: [
+      //   GetPage(
+      //     name: SplashScreen.routeName,
+      //     page: () => const SplashScreen(),
+      //   ),
+      //   GetPage(
+      //       name: HomeScreen.routeName,
+      //       page: () => const HomeScreen(),
+      //       children: [
+      //         GetPage(
+      //           name: CategoryScreen.routeName,
+      //           page: () => const CategoryScreen(),
+      //         ),
+      //         GetPage(
+      //           name: AboutScreen.routeName,
+      //           page: () => const AboutScreen(),
+      //         ),
+      //         GetPage(
+      //           name: CartScreen.routeName,
+      //           page: () => const CartScreen(),
+      //         ),
+      //       ],)],
 
       title: "Chirkut",
       debugShowCheckedModeBanner: false,
       home : 
       
-      Home()
+      // Home()
       // createProfile()
-      //  FirebaseAuth.instance.currentUser == null ? const Signup() :  const Home()
+       FirebaseAuth.instance.currentUser == null ? const Signup() :  const Home()
     );
   }
 }

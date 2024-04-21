@@ -1,9 +1,6 @@
 git init
 git add .
-git commit -m "rewriting app"
+git commit -m "made some changes"
 git branch -M main
 git remote add origin https://github.com/alokjha2/chillx.git
 git push -u origin main
-
-
-flutter pub run flutter_native_splash:create --path=C:/bunny/recommendation/pubspec.yaml
