@@ -16,7 +16,7 @@ import 'package:chillx/useraccount/listaccount/improvement/report_bug.dart';
 import 'package:chillx/useraccount/listaccount/improvement/request_feature.dart';
 import 'package:chillx/useraccount/listaccount/profile/profile.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:store_redirect/store_redirect.dart';
+// import 'package:store_redirect/store_redirect.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -83,8 +83,8 @@ class _AccountPageState extends State<AccountPage> {
                   children: [
                     ontap_subcategory(icon: const Icon(Icons.share_rounded), text: "Tell Friend", ontap: ()=> Share.share("Hey, I am using chirkut, join it & share your recommendations related to movies, books, songs, documentary to other", subject: "chirkut is available on play store")),
                     line,
-                    ontap_subcategory(icon: const Icon(Icons.star_rate_rounded), text: "Rate Us", ontap: ()=>StoreRedirect.redirect(androidAppId : "com.chirkut.community"),
-                  ),
+                    // ontap_subcategory(icon: const Icon(Icons.star_rate_rounded), text: "Rate Us", ontap: ()=>StoreRedirect.redirect(androidAppId : "com.chirkut.community"),
+                  // ),
                 ],
               )
             ],

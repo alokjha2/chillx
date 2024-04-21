@@ -69,29 +69,9 @@ class _MainState extends State<Main> {
       debugShowCheckedModeBanner: false,
       home : 
       
-      HomePage()
-      
+      Home()
+      // createProfile()
       //  FirebaseAuth.instance.currentUser == null ? const Signup() :  const Home()
     );
   }
 }
-
-// class HomePage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('My App'),
-//       ),
-//       body: Center(
-//         child: Text(
-//           'Hello!',
-//           style: TextStyle(
-//             fontSize: 24,
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

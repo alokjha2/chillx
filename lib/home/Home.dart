@@ -11,6 +11,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:page_transition/page_transition.dart';
 // import 'package:paginate_firestore/paginate_firestore.dart';
+// import 'package:paginate_firestore/paginate_firestore.dart';
+// import 'package:firebase_pagination/firebase_pagination.dart';
+
 import 'package:chillx/appbar/notifications.dart';
 import 'package:chillx/appbar/search.dart';
 import 'package:chillx/home/showPools.dart';
@@ -24,6 +27,9 @@ import 'package:chillx/post/showComments.dart';
 import 'package:chillx/support/exitApp.dart';
 import 'package:chillx/support/message.dart';
 import 'package:chillx/useraccount/Account.dart';
+// ignore: depend_on_referenced_packages
+// import 'package:paginate_firestore/paginate_firestore.dart';
+// import 'package:firebase_pagination/firebase_pagination.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -34,18 +40,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  // final user = FirebaseAuth.instance.currentUser!;
+  final user = FirebaseAuth.instance.currentUser!;
   ScrollController controller = ScrollController();
   final _restaurants = [];
   var _nomore = false;
   var _isFetching = false;
   late DocumentSnapshot _lastDocument;
 
-  // @override
-  // void initState() {
-  //   getDoc(context);
-  //   super.initState();
-  // }
+  @override
+  void initState() {
+    getDoc(context);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +63,10 @@ class _HomeState extends State<Home> {
           title: Text("chillx", style: GoogleFonts.ubuntu(textStyle: TextStyle(fontSize: 26)),),
           actions: [
 
-            IconButton(
-              iconSize: 25,
-              onPressed: (){
-              }, icon: Icon(Icons.search)),
+            // IconButton(
+            //   iconSize: 25,
+            //   onPressed: (){
+            //   }, icon: Icon(Icons.search)),
 
 
             IconButton(
@@ -70,11 +76,11 @@ class _HomeState extends State<Home> {
             }, icon: const Icon(Icons.notifications)),
 
 
-            // IconButton(
-            //   iconSize: 35 ,
-            //   onPressed: (){
-            //   Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, alignment: Alignment.bottomCenter, child: const AccountPage(),));
-            // }, icon: Icon(Icons.account_circle_rounded)),
+            IconButton(
+              iconSize: 35 ,
+              onPressed: (){
+              Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, alignment: Alignment.bottomCenter, child: const AccountPage(),));
+            }, icon: Icon(Icons.account_circle_rounded)),
         ],
       ),
 
@@ -96,7 +102,7 @@ class _HomeState extends State<Home> {
         SingleChildScrollView(
           child: Column(children: [
             buildPools(),
-            // userInterest()
+            userInterest()
           ],),
         )
         
@@ -107,19 +113,27 @@ class _HomeState extends State<Home> {
 
        
       // add recommendations // post 
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.lightBlueAccent,
-      //   onPressed: () {
-      //     Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft,child: const Upload()));
-      //   },
-      //   child : const Icon(Icons.add, size: 30),
-      //   ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.lightBlueAccent,
+        onPressed: () {
+          Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft,child: const Upload()));
+        },
+        child : const Icon(Icons.add, size: 30),
+        ),
         ),
     );
   }
 
 
 // Widget paginatePost({required feedList})=>
+// FirestorePagination(
+//   query: FirebaseFirestore.instance.collection('scores').orderBy('score'),
+//   itemBuilder: (context, documentSnapshot, index) {
+//     final data = documentSnapshot.data() as Map<String, dynamic>;
+
+//     // Do something cool with the data
+//   },
+// ),
 //   PaginateFirestore(
 //     physics: NeverScrollableScrollPhysics(),//add this line
 //     shrinkWrap: true,
